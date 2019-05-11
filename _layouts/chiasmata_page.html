@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
   <body>
-    <div>{% include navigation.html %}</div>
+    {% include navigation.html %}
     {% include navbar.html %}
-    <div id="content">
-        <div id="page">
+    <section id="content">
+        <section id="page">
             <h1>>{{ page.title }}</h1>
-            {{ content }}</div>
-    </div>
+            {{ content }}</section>
+    </section>
     {% include navbar.html %}
   </body>
 </html>

@@ -43,7 +43,8 @@ body {
   padding-bottom: 5px;
   max-width: 1000px;
   min-width: 800px;
-  font-size: 0px; }
+  font-size: 0px;
+  height: 102px; }
 
 nav {
   background-color: #000000;
