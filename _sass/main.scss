@@ -3,37 +3,54 @@ body {
   color: #ffffff;
   margin: 0;
 	font-family: "courier", "monospace";
-	font-size: 12px;
 	overflow-y: scroll;
-	background-color: #535353;
+  background-color: #535353;
 }
 
-/* link colors */
-a:link {
-	color: #aaaaaa;
-	text-decoration: none;
-}
-a:visited {
-	color: #777777;
-	text-decoration: none;
-}
-a:hover {
-	color: #ffffff;
-	text-decoration: none;
-}
-a:active {
-	color: #777777;
-	text-decoration: none;
+.current{
+  color: green;
 }
 
-#default{
+#content{
+  //font-size: 12px;
   background-color: #333333;
 	position: relative;
   font-family: 'Arial', sans-serif;
   display: block;
   margin: auto;
+  max-width: 920px;
+  min-width: 600px;
+  padding: 40px;
+  padding-top: 20px;
+}
+
+#page{
+  background-color: #000000;
+  padding: 0 25px;
+  display: block;
+  margin: auto;
+  max-width: 750px;
+  min-width: 550px;
+}
+
+#page img{
+  margin: 0 -25px;
+}
+
+#page h1{
+  text-align: center;
+  padding: 14px 0;
+}
+
+#navbar{
+  background-color: #0C0C0C;
+  color: #ffffff;
+  margin: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
   max-width: 1000px;
   min-width: 800px;
+  font-size: 0px;
 }
 
 nav {
