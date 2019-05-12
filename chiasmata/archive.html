@@ -7,8 +7,10 @@ title: Chiasmata
 
 <ul>
     {% for post in site.posts %}
-        {% if post.categories contains 'chiasmata' %}
-            ><a href="{{ post.url }}">{{ post.title }}</a>
-        {% endif %}
+        <li>
+            {% if post.categories contains 'chiasmata' %}
+                ><a href="{{ post.url }}">{{ post.title }}</a>
+            {% endif %}
+        </li>
     {% endfor %}
 </ul>

@@ -3,7 +3,6 @@ body {
   color: #ffffff;
   margin: 0;
   font-family: "courier", "monospace";
-  overflow-y: scroll;
   background-color: #535353; }
 
 .current {
@@ -14,17 +13,21 @@ body {
   font-family: 'Arial', sans-serif;
   display: block;
   margin: auto;
+  margin-top: 0;
   max-width: 920px;
   min-width: 600px;
-  padding: 0 40px; }
+  padding: 0 40px;
+  overflow: hidden; }
 
 #page {
   background-color: #000000;
   padding: 0 25px;
   display: block;
   margin: auto;
+  margin-top: 0;
   max-width: 750px;
-  min-width: 550px; }
+  min-width: 550px;
+  overflow: hidden; }
 
 #page img {
   margin: 0 -25px; }
