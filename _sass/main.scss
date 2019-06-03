@@ -6,10 +6,6 @@ body {
   background-color: #535353;
 }
 
-.current{
-  color: green;
-}
-
 #content{
   //font-size: 12px;
   background-color: #333333;
@@ -23,6 +19,28 @@ body {
   overflow: hidden;
 }
 
+/* link colors */
+a:link {
+	color: #aaaaaa;
+	text-decoration: none;
+}
+a:visited {
+	color: #777777;
+	text-decoration: none;
+}
+a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+a:active {
+	color: #777777;
+	text-decoration: none;
+}
+
+a.current{
+  color: green;
+}
+
 #page{
   background-color: #000000;
   padding: 0 25px;
@@ -32,6 +50,70 @@ body {
   max-width: 750px;
   min-width: 550px;
   overflow: hidden;
+}
+
+#page .dialogue{
+  margin-left: 56px;
+}
+
+.dialogue p{
+  margin: 5px;
+}
+
+#page .Sam{
+  color: #006cff;
+}
+
+#page .Aidan{
+  color: #00ff90;
+}
+
+#page .Daniel{
+  color: #ff5400;
+}
+
+#page .Bonnie{
+  color: #ffd800;
+}
+
+#page .Jacqueline{
+  color: #FF0000;
+}
+
+#page .Clara{
+  color: #88ff00;
+}
+
+#page .Leo{
+  color: #ffba00;
+}
+
+#page .Omar{
+  color: #593eff;
+}
+
+#page .David{
+  color: #ff9000;
+}
+
+#page .Dawn{
+  color: #3041ff;
+}
+
+#page .Ash{
+  color: #00ff00;
+}
+
+#page .Anders{
+  color: #ff0096;
+}
+
+#page .green_mystery{
+  color: #00ff69;
+}
+
+#page .orange_mystery{
+  color: #FF8B00;
 }
 
 #page img{
