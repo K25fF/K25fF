@@ -1,10 +1,18 @@
 <nav>
     <span id="leftlinks">
         {% for item in site.data.navigation %}
-            <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
+        <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}><button class="navbutton">{{ item.name }}</button></a>
         {% endfor %}
+        <div class="dropdown">
+            <a href="/chiasmata/archive.html"{% if page.url == "/chiasmata/archive.html" %}class="current"{% endif %}><button class="dropbtn">Chiasmata</button></a>
+            <div class="dropdown-content">
+              <a href="/chiasmata/archive.html">Archive</a>
+              <a href="/chiasmata/cast">Cast</a>
+            </div>
+          </div> 
     </span>
     <span id="rightlinks">
-        Basic links for everywhere go here.
+        <a href="http://k25ff.tumblr.com"><img src="/assets/images/tumblr.png" alt="Tumblr"></a>
+        <a href="http://twitter.com/k25ff"><img src="/assets/images/twitter.png" alt="Tumblr"></a>
     </span>
 </nav>

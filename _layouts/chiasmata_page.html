@@ -5,10 +5,10 @@
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
-  <body class="{{ page.body_class }}">
+  <body {% if page.body_class != null %}class="{{ page.body_class }}"{% endif %}>
         {% include navigation.html %}
         {% include navbar.html %}
-    <section id="content">
+    <section class="content">
         <section id="page">
             <h1>>{{ page.title }}</h1>
             {{ content }}
@@ -19,5 +19,22 @@
         </section>
     </section>
     {% include navbar.html %}
+    <script>
+      document.addEventListener('keydown', navigate);
+      function navigate(e) {
+        if (e.code == "ArrowLeft")
+        {          
+          {% if page.previous_in_category != null %}
+            window.location.href = "{{ page.previous_in_category.url }}";
+          {% endif %}
+        }
+        if (e.code == "ArrowRight")
+        {
+          {% if page.next_in_category != null %}
+            window.location.href = "{{ page.next_in_category.url }}";
+          {% endif %}
+        }
+        }
+    </script>
   </body>
 </html>
