@@ -74,7 +74,8 @@ def main():
             f.write('layout: chiasmata_page\n')
             f.write('title: ' + title + '\n')
             f.write('category: chiasmata\n')
-            f.write('---\n\n\n')
+            f.write('---\n\n')
+            f.write('![' + title + '](/chiasmata/images/narrative/)\n\n')
         finally:
             f.close()
     except IOError:
