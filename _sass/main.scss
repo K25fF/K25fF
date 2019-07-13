@@ -191,6 +191,12 @@ body.pink_2{
 	background-size: 210px 210px;
 }
 
+.secret_02{
+  position: absolute;
+  top: 700px;
+  left: -150px;
+}
+
 
 /* content */
 
@@ -258,8 +264,8 @@ body.dark .content{
   max-width: 920px;
   min-width: 600px;
   padding: 0 40px;
-  overflow-y: hidden;
   overflow-x: visible;
+  position: relative;
 }
 
 /* link colors */
@@ -292,16 +298,18 @@ a.current{
   margin-top: 0;
   max-width: 750px;
   min-width: 550px;
+  position: relative;
 }
 
 /* This is to make the things meet the bottom of the page, because margins in CSS are weird. */
 
-#page h1:first-of-type{
+.content h1:first-of-type{
   padding-top:19px;
+  padding-bottom: 15px;
   margin-top: 0px;
 }
 
-#page p:last-of-type, #page h2:last-of-type{
+.content p:last-of-type, .content h2:last-of-type{
   padding-bottom: 15px;
   margin-bottom: 0px;
 }
@@ -342,6 +350,10 @@ a.current{
   color: #ffba00;
 }
 
+#page .Ghost{
+  color: #b58400;
+}
+
 #page .Omar{
   color: #593eff;
 }
@@ -368,6 +380,15 @@ a.current{
 
 #page .orange_mystery{
   color: #FF8B00;
+}
+
+#page .Robot{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#page .other_mystery{
+  text-align: right;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 #page img{

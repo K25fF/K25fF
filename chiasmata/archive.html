@@ -5,7 +5,7 @@ title: Chiasmata
 
 <h1>Page Archive</h1>
 
-<ul>
+<ol reversed>
     {% for post in site.posts %}
         <li>
             {% if post.categories contains 'chiasmata' %}
@@ -13,4 +13,4 @@ title: Chiasmata
             {% endif %}
         </li>
     {% endfor %}
-</ul>
+</ol>
