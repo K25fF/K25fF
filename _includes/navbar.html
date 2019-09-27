@@ -4,76 +4,90 @@
             {% if forloop.last == true %}
                 <a href="{{ post.url }}">
                     {% if page.eye_type == "pink" %}
-                        <img src="\assets\images\l_arrow_long_pink.png" alt="first">
+                        <img src="\assets\images\l_arrow_long_pink.png" title="first" alt="first">
                     {% else %}
-                        <img src="\assets\images\l_arrow_long.png" alt="first">
+                        <img src="\assets\images\l_arrow_long.png" title="first" alt="first">
                     {% endif %}
                 </a>
             {% endif %}
         {% endfor %}
     {% else %}
         {% if page.eye_type == "pink" %}
-            <img src="\assets\images\l_arrow_long_pink_inactive.png" alt="first">
+            <img src="\assets\images\l_arrow_long_pink_inactive.png" title="first" alt="you're at the beginning!">
         {% else %}
-            <img src="\assets\images\l_arrow_long_inactive.png" alt="first">
+            <img src="\assets\images\l_arrow_long_inactive.png" title="first" alt="you're at the beginning!">
         {% endif %}
     {% endif %}
     {% if page.previous_in_category != null %}
         <a href="{{ page.previous_in_category.url }}">
             {% if page.eye_type == "pink" %}
-                <img src="\assets\images\l_arrow_short_pink.png" alt="prev">
+                <img src="\assets\images\l_arrow_short_pink.png" title="previous" alt="prev">
             {% else %}
-                <img src="\assets\images\l_arrow_short.png" alt="prev">
+                <img src="\assets\images\l_arrow_short.png" title="previous" alt="prev">
             {% endif %}
         </a>
     {% else %}
         {% if page.eye_type == "pink" %}
-            <img src="\assets\images\l_arrow_short_inactive_pink.png" alt="prev">
+            <img src="\assets\images\l_arrow_short_inactive_pink.png" title="you're at the beginning!" alt="prev">
         {% else %}
-            <img src="\assets\images\l_arrow_short_inactive.png" alt="prev">
+            <img src="\assets\images\l_arrow_short_inactive.png" title="you're at the beginning!" alt="prev">
         {% endif %}
     {% endif %}
     <a href="/chiasmata/archive.html">
+        <img src="
         {% if page.eye_type == "pink" %}
-            <img src="\assets\images\eye_02.png" alt="archive">
+            \assets\images\eye_02.png
         {% elsif page.eye_type == "spooky" %}
-            <img src="\assets\images\eye_01.png" alt="archive">
+            \assets\images\eye_01.png
         {% elsif page.eye_type == "glitchy" %}
-            <img src="\assets\images\eye_glitch.gif" alt="archive">
+            \assets\images\eye_glitch.gif
+        {% elsif page.eye_type == "ibby_eye" %}
+            \assets\images\eye_ibby.png
+        {% elsif page.eye_type == "ibby_0" %}
+            \assets\images\ibby_0.png
+        {% elsif page.eye_type == "ibby_1" and top == true %}
+            \assets\images\ibby_1.png
+        {% elsif page.eye_type == "ibby_1" and top == false %}
+            \assets\images\ibby_2.png
         {% else %}
-            <img src="\assets\images\eye_00.png" alt="archive">
+        \assets\images\eye_00.png
+        {% endif %}" 
+        {% if page.eye_title != null %}
+        title="{{ page.eye_title }}"
         {% endif %}
+        alt="archive">
     </a>
     {% if page.next_in_category != null %}
         <a href="{{ page.next_in_category.url }}">
             {% if page.eye_type == "pink" %}
-                <img src="\assets\images\r_arrow_short_pink.png" alt="next">
+                <img src="\assets\images\r_arrow_short_pink.png" title="next" alt="next">
             {% else %}
-                <img src="\assets\images\r_arrow_short.png" alt="next">
+                <img src="\assets\images\r_arrow_short.png" title="next" alt="next">
             {% endif %}
         </a>
     {% else %}
         {% if page.eye_type == "pink" %}
-            <img src="\assets\images\r_arrow_short_pink_inactive.png" alt="next">
+            <img src="\assets\images\r_arrow_short_pink_inactive.png" title="you're at the end!" alt="next">
         {% else %}
-            <img src="\assets\images\r_arrow_short_inactive.png" alt="next">
+            <img src="\assets\images\r_arrow_short_inactive.png" title="you're at the end!">
         {% endif %}
     {% endif %}
     {% if page.next_in_category != null %}
         {% for post in site.categories['chiasmata'] limit:1 %}
             <a href="{{ post.url }}">
                 {% if page.eye_type == "pink" %}
-                    <img src="\assets\images\r_arrow_long_pink.png" alt="last">
+                    <img src="\assets\images\r_arrow_long_pink.png" title="last" alt="last">
                 {% else %}
-                    <img src="\assets\images\r_arrow_long.png" alt="last">
+                    <img src="\assets\images\r_arrow_long.png" title="last" alt="last">
                 {% endif %}
             </a>
         {% endfor %}
     {% else %}
         {% if page.eye_type == "pink" %}
-            <img src="\assets\images\r_arrow_long_pink_inactive.png" alt="last">
+            <img src="\assets\images\r_arrow_long_pink_inactive.png" title="you're at the end!" alt="last">
         {% else %}
-            <img src="\assets\images\r_arrow_long_inactive.png" alt="last">
+            <img src="\assets\images\r_arrow_long_inactive.png" title="you're at the end!" alt="last">
         {% endif %}
     {% endif %}
 </section>
+{% assign top = false %}

@@ -72,7 +72,8 @@ def main():
         try:
             f.write('---\n')
             f.write('layout: chiasmata_page\n')
-            f.write('title: ' + title + '\n')
+            f.write('title: \"Chiasmata: ' + title + '\"\n')
+            f.write('command: ' + title + '\n')
             f.write('category: chiasmata\n')
             f.write('---\n\n')
             f.write('![' + title + '](/chiasmata/images/narrative/)\n\n')

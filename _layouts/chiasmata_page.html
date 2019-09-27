@@ -10,14 +10,15 @@
   </head>
   <body {% if page.body_class != null %}class="{{ page.body_class }}"{% endif %}>
         {% include navigation.html %}
+        {% assign top = true %}
         {% include navbar.html %}
     <section class="content">
         <section id="page">
-            <h1>{% if page.nocommand %}{% else %}>{% endif %}{{ page.title }}</h1>
+            <h1>{% if page.nocommand %}{% else %}>{% endif %}{{ page.command }}</h1>
             {{ content }}
             {% if page.next_in_category != null %}
               </br>
-              <h2>> <a href="{{ page.next_in_category.url }}">{{ page.next_in_category.title }}</a></h2>
+              <h2>> <a href="{{ page.next_in_category.url }}">{{ page.next_in_category.command }}</a></h2>
             {% endif %}
         </section>
     </section>

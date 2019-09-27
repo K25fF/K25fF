@@ -9,7 +9,7 @@ title: Chiasmata
     {% for post in site.posts %}
         <li>
             {% if post.categories contains 'chiasmata' %}
-                ><a href="{{ post.url }}">{{ post.title }}</a>
+                ><a href="{{ post.url }}">{{ post.command }}</a>
             {% endif %}
         </li>
     {% endfor %}
