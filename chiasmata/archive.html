@@ -4,12 +4,17 @@ title: Chiasmata
 ---
 
 <h1>Page Archive</h1>
+<a href="{% for post in site.categories['chiasmata'] %}
+    {% if forloop.last == true %}
+        {{ post.url }}
+    {% endif %}
+{% endfor %}"><h2>Start from the beginning.</h2></a>
 
 <ol reversed>
     {% for post in site.posts %}
         <li>
             {% if post.categories contains 'chiasmata' %}
-                ><a href="{{ post.url }}">{{ post.command }}</a>
+                > <a href="{{ post.url }}">{{ post.command }}</a>
             {% endif %}
         </li>
     {% endfor %}
