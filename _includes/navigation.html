@@ -4,10 +4,11 @@
         <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}><button class="navbutton">{{ item.name }}</button></a>
         {% endfor %}
         <div class="dropdown">
-            <a href="/chiasmata/archive.html"{% if page.url == "/chiasmata/archive.html" %}class="current"{% endif %}><button class="dropbtn">Chiasmata</button></a>
+            <a href="/chiasmata/archive"{% if page.url == "/chiasmata/archive.html" %}class="current"{% endif %}><button class="dropbtn">Chiasmata</button></a>
             <div class="dropdown-content">
-              <a href="/chiasmata/archive.html">Archive</a>
+              <a href="/chiasmata/archive">Archive</a>
               <a href="/chiasmata/cast">Cast</a>
+              <a href="/chiasmata/blog">Blog</a>
             </div>
           </div> 
     </span>

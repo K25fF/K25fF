@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Chiasmata
+title: Chiasmata Archive
 ---
 
 <h1>Page Archive</h1>
@@ -12,10 +12,10 @@ title: Chiasmata
 
 <ol reversed>
     {% for post in site.posts %}
-        <li>
-            {% if post.categories contains 'chiasmata' %}
+        {% if post.categories contains 'chiasmata' %}
+            <li>
                 > <a href="{{ post.url }}">{{ post.command }}</a>
-            {% endif %}
-        </li>
+            </li>
+        {% endif %}
     {% endfor %}
 </ol>

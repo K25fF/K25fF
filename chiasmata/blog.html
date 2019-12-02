@@ -1,0 +1,22 @@
+---
+layout: default
+title: Chiasmata Updates
+---
+
+<h1>Blog Archive</h1>
+
+<a href="{% for post in site.categories['update'] %}
+    {% if forloop.last == true %}
+        {{ post.url }}
+    {% endif %}
+{% endfor %}"><h2>Start from the beginning.</h2></a>
+
+<ol reversed style="list-style: none;">
+    {% for post in site.posts %}
+        {% if post.categories contains 'update' %}
+            <li>
+                {{ post.date | date: '%B %d, %Y' }}: <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ol>

@@ -71,12 +71,11 @@ def main():
         # write yaml to file
         try:
             f.write('---\n')
-            f.write('layout: chiasmata_page\n')
-            f.write('title: \"Chiasmata: ' + title + '\"\n')
-            f.write('command: ' + title + '\n')
-            f.write('category: chiasmata\n')
+            f.write('layout: chiasmata_update\n')
+            f.write('date: ' + date + '\n')
+            f.write('title: placeholder\n')
+            f.write('category: update\n')
             f.write('---\n\n')
-            f.write('![' + title + '](/chiasmata/images/narrative/)\n\n')
         finally:
             f.close()
     except IOError:
