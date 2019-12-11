@@ -24,8 +24,13 @@
             <h1>{% if page.nocommand %}{% else %}>{% endif %}{{ page.command }}</h1>
             {{ content }}
             {% if page.next_in_category != null %}
-              </br>
-              <h2>> <a href="{{ page.next_in_category.url }}">{{ page.next_in_category.command }}</a></h2>
+              <br>
+              <h2>&gt; <a href="{{ page.next_in_category.url }}">{{ page.next_in_category.command }}</a></h2>
+              {% else %}
+              <br>
+              <h2>&gt; <a href="{% for post in site.categories['update'] limit:1 %}
+                {{ post.url }}
+              {% endfor %}"><span class="blink_me">_</span></a></h2>
             {% endif %}
         </section>
     </section>

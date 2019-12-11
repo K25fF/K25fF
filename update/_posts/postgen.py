@@ -73,7 +73,7 @@ def main():
             f.write('---\n')
             f.write('layout: chiasmata_update\n')
             f.write('date: ' + date + '\n')
-            f.write('title: placeholder\n')
+            f.write('title: \"' + title + '\"\n')
             f.write('category: update\n')
             f.write('---\n\n')
         finally:
