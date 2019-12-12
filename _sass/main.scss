@@ -27,7 +27,7 @@ nav{
   margin: auto;
   font-size: 20px;
   max-width: 1000px;
-  min-width: 800px;
+  //min-width: 800px;
 }
 
 .navbutton{
@@ -58,6 +58,17 @@ nav span{
   padding-right: 40px;
   padding-top: 5px;
 }
+
+@media screen and (max-width: 800px) {
+  #rightlinks {
+    clear: both;
+    float: none;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+  }
+} 
 
 /* Dropdowns */
 
@@ -456,6 +467,11 @@ a.current{
 #page h1{
   text-align: center;
   padding: 14px 0;
+}
+
+#page .center-image{
+  margin: 0 auto;
+  display: block;
 }
 
 .center-image{
