@@ -8,3 +8,8 @@ disqus:
 
 site:
     title: K25fF
+
+collections:
+    portfolio:
+        output: true
+        permalink: /portfolio/:path/

@@ -1,9 +1,21 @@
 body {
-	/*font-family: "Lucida Grande", "Trebuchet MS", Helvetica, Arial, sans-serif;*/
   color: #ffffff;
   margin: 0;
-	font-family: "courier", "monospace";
+  font-family: "courier", "monospace";
+  font-size: 1em;
   background-color: #535353;
+}
+
+@media (orientation: portrait) and (max-width: 850px) {
+  body,.navbutton,.dropbtn{
+  font-size: 2em;
+  }
+  nav{
+    font-size: 2.25em;
+  }
+  #page.small{
+    font-size:1.5em;
+  }
 }
 
 /* NAVBAR STUFF */
@@ -25,14 +37,14 @@ nav{
 	color: #ffffff;
   font-family: 'Roboto', sans-serif;
   margin: auto;
-  font-size: 20px;
+  font-size: 1.25em;
   max-width: 1000px;
   //min-width: 800px;
 }
 
 .navbutton{
   font-family: inherit;
-  font-size: 20px;
+  font-size: 1em;
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: black;
@@ -59,7 +71,7 @@ nav span{
   padding-top: 5px;
 }
 
-@media screen and (max-width: 800px) {
+@media (orientation:portrait) and (max-width: 850px) {
   #rightlinks {
     clear: both;
     float: none;
@@ -75,7 +87,7 @@ nav span{
 /* Style The Dropdown Button */
 .dropbtn {
   font-family: inherit;
-  font-size: 20px;
+  font-size: 1em;
   padding-top: 10px;
   padding-bottom: 10px;
   color: inherit;
@@ -149,7 +161,7 @@ nav span{
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 850px) {
   .column {
     float: left;
     width: 33.33%;
@@ -293,7 +305,6 @@ body.orange .content{
 /* Other general Chiasmata page bits */
 
 .content{
-  //font-size: 12px;
   background-color: #333333;
   font-family: 'Arial', sans-serif;
   display: block;
@@ -430,7 +441,7 @@ a.current{
 }
 
 #page .small{
-  font-size: 10px;
+  font-size: 0.5em;
 }
 
 // This is what I use to blink the cursor.
