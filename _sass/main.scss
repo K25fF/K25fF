@@ -291,6 +291,18 @@ body.dark .content{
   background-color: #1b1b1b;
 }
 
+/* Spooky, yet spookier... */
+
+body.darker{
+  background-color: #0f0f0f;
+  background-image: url("/assets/images/static.png");
+  background-repeat: repeat;
+}
+
+body.darker .content{
+  background-color: #151515;
+}
+
 /* Someone else is spooky */
 
 body.orange{

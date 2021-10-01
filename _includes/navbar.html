@@ -49,8 +49,10 @@
             \assets\images\ibby_1.png
         {% elsif page.eye_type == "ibby_1" and top == false %}
             \assets\images\ibby_2.png
+        {% elsif page.eye_type == "syndicate" %}
+            \assets\images\eye_03.png
         {% else %}
-        \assets\images\eye_00.png
+            \assets\images\eye_00.png
         {% endif %}" 
         {% if page.eye_title != null %}
         title="{{ page.eye_title }}"
