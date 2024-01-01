@@ -291,11 +291,23 @@ body.dark .content{
   background-color: #1b1b1b;
 }
 
+/* The Location's Funniest Home Videos */
+
+body.video{
+  background-color: #282828;
+  background-image: url("/assets/images/static_light.png");
+  background-repeat: repeat;
+}
+
+body.video .content{
+  background-color: #1b1b1b;
+}
+
 /* Spooky, yet spookier... */
 
 body.darker{
   background-color: #0f0f0f;
-  background-image: url("/assets/images/static.png");
+  background-image: url("/assets/images/static_dark.png");
   background-repeat: repeat;
 }
 
@@ -573,9 +585,9 @@ skew to change the 'thickness' of the glitch.*/
 @keyframes glitch-anim {
 $steps: 20;
 @for $i from 0 through $steps {
-  #{percentage($i*(1/$steps))} {
+  #{percentage($i*calc(1/$steps))} {
     clip: rect(random(100)+px, 9999px, random(100)+px, 0);
-    transform: skew((random(100) / 100) + deg);
+    transform: skew(calc(random(100) / 100) + deg);
   }
 }
 }
@@ -584,9 +596,9 @@ $steps: 20;
 @keyframes glitch-anim2 {
 $steps: 20;
 @for $i from 0 through $steps {
-  #{percentage($i*(1/$steps))} {
+  #{percentage($i*calc(1/$steps))} {
     clip: rect(random(100)+px, 9999px, random(100)+px, 0);
-    transform: skew((random(100) / 100) + deg);
+    transform: skew(calc(random(100) / 100) + deg);
   }
 }
 }
@@ -595,7 +607,7 @@ $steps: 20;
 @keyframes glitch-skew {
 $steps: 10;
 @for $i from 0 through $steps {
-  #{percentage($i*(1/$steps))} {
+  #{percentage($i*calc(1/$steps))} {
     transform: skew((random(10) - 5) + deg);
   }
 }

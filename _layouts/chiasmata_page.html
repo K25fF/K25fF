@@ -1,56 +1,56 @@
 <!doctype html>
 <html>
   <head>
-    {% if jekyll.environment == 'production' %}
-      {% include analytics.html %}
-    {% endif %}
-    {% if page.eye_type == "pink" %}
+    {%- if jekyll.environment == 'production' -%}
+      {%- include analytics.html -%}
+    {%- endif -%}
+    {%- if page.eye_type == "pink" -%}
       <link rel="shortcut icon" href="/assets/images/Favicon_Pink.png">
-    {% elsif page.eye_type == "spooky" %}
+    {%- elsif page.eye_type == "spooky" -%}
       <link rel="shortcut icon" href="/assets/images/Favicon_Spooky.png">
-    {% elsif page.eye_type == "syndicate" %}
+    {%- elsif page.eye_type == "syndicate" -%}
       <link rel="shortcut icon" href="/assets/images/Favicon_Elsewhere.png">
-    {% else %}
+    {%- else -%}
     <link rel="shortcut icon" href="/assets/images/Favicon_Default.png">
-    {% endif %}
+    {%- endif -%}
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
-  <body {% if page.body_class != null %}class="{{ page.body_class }}"{% endif %}>
-        {% include navigation.html %}
-        {% assign top = true %}
-        {% include navbar.html %}
+  <body {%- if page.body_class != null -%}class="{{ page.body_class }}"{%- endif -%}>
+        {%- include navigation.html -%}
+        {%- assign top = true -%}
+        {%- include navbar.html -%}
     <section class="content">
         <section id="page">
-            <h1>{% if page.nocommand %}{% else %}>{% endif %}{{ page.command }}</h1>
+            <h1>{%- if page.nocommand -%}{%- else -%}>{%- endif -%}{{ page.command }}</h1>
             {{ content }}
-            {% if page.next_in_category != null %}
+            {%- if page.next_in_category != null -%}
               <br>
               <h2>&gt; <a href="{{ page.next_in_category.url }}">{{ page.next_in_category.command }}</a></h2>
-              {% else %}
+              {%- else -%}
               <br>
-              <h2>&gt; <a href="{% for post in site.categories['update'] limit:1 %}
+              <h2>&gt; <a href="{%- for post in site.categories['update'] limit:1 -%}
                 {{ post.url }}
-              {% endfor %}"><span class="blink_me">_</span></a></h2>
-            {% endif %}
+              {%- endfor -%}"><span class="blink_me">_</span></a></h2>
+            {%- endif -%}
         </section>
     </section>
-    {% include navbar.html %}
+    {%- include navbar.html -%}
     <script>
       document.addEventListener('keydown', navigate);
       function navigate(e) {
         if (e.code == "ArrowLeft")
         {          
-          {% if page.previous_in_category != null %}
+          {%- if page.previous_in_category != null -%}
             window.location.href = "{{ page.previous_in_category.url }}";
-          {% endif %}
+          {%- endif -%}
         }
         if (e.code == "ArrowRight")
         {
-          {% if page.next_in_category != null %}
+          {%- if page.next_in_category != null -%}
             window.location.href = "{{ page.next_in_category.url }}";
-          {% endif %}
+          {%- endif -%}
         }
         }
     </script>

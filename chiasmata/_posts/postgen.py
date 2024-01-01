@@ -21,7 +21,7 @@ def main():
     parser.add_argument('-d', '--date', help='specify the post date in the format YYYY-MM-DD, otherwise today is the default date.')
     parser.add_argument('-n', '--name', help='specify the name of the post file instead of the automatically generated one. It is a best practice for the words to be separated by hyphens. Also note that the given name will be prepended with the date so as to conform to Jekyll naming requirements.')
     args = parser.parse_args()
-
+    
     title = args.title
     # exchange spaces for dashes
     dash_title = ''

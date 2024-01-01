@@ -4,18 +4,18 @@ title: Chiasmata Archive
 ---
 
 <h1>Page Archive</h1>
-<a href="{% for post in site.categories['chiasmata'] %}
-    {% if forloop.last == true %}
+<a href="{%- for post in site.categories['chiasmata'] -%}
+    {%- if forloop.last == true -%}
         {{ post.url }}
-    {% endif %}
-{% endfor %}"><h2>Start from the beginning.</h2></a>
+    {%- endif -%}
+{%- endfor -%}"><h2>Start from the beginning.</h2></a>
 
 <ol reversed>
-    {% for post in site.posts %}
-        {% if post.categories contains 'chiasmata' %}
+    {%- for post in site.posts -%}
+        {%- if post.categories contains 'chiasmata' -%}
             <li>
                 > <a href="{{ post.url }}">{{ post.command }}</a>
             </li>
-        {% endif %}
-    {% endfor %}
+        {%- endif -%}
+    {%- endfor -%}
 </ol>
