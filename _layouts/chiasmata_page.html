@@ -17,10 +17,10 @@
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
-  <body {%- if page.body_class != null -%}class="{{ page.body_class }}"{%- endif -%}>
-        {%- include navigation.html -%}
-        {%- assign top = true -%}
-        {%- include navbar.html -%}
+  <body {% if page.body_class != null %}class="{{ page.body_class }}"{% endif %}>
+        {% include navigation.html %}
+        {% assign top = true %}
+        {% include navbar.html %}
     <section class="content">
         <section id="page">
             <h1>{%- if page.nocommand -%}{%- else -%}>{%- endif -%}{{ page.command }}</h1>
