@@ -135,38 +135,113 @@ nav span{
 
 /* Cast page stylings */
 
-/* Create three equal columns that floats next to each other */
-.column {
-  width: 100%;
-  float: left;
-  height: 220px;
+.cast-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.cast-box {
+  width: 400px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  background-color: #282828;
+}
+.cast-content {
+  display: flex;
+  flex-grow: 1;
+}
+.cast-image-container {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  margin-right: 15px;
+}
+.cast-image {
+  position: absolute;
+  /* Default positioning */
+  top: 0;
+  left: 0;
+}
+.cast-image-transition {
+  transition: opacity 0.7s ease;
+}
+.cast-image-hover {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+.cast-image-container:hover .cast-image-transition {
+  opacity: 0;
+}
+.cast-image-container:hover .cast-image-hover {
+  opacity: 1;
+}
+.cast-text {
+  flex: 1;
+}
+.cast-name {
+  font-weight: bold;
+  margin: 0px;
+}
+.cast-description {
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+.cast-description-image {
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  display: flex;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+.cast-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8em;
+  font-family: monospace;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  height: 20px; /* Set this to your desired height */
+  margin-top: auto; /* This pushes the info bar to the bottom */
+}
+.cast-info-left {
+  text-align: left;
+}
+.cast-info-right {
+  text-align: right;
 }
 
-.column img {
-  float: left;
-  margin-top: 5px;
-  margin-right: 5px;
+.chapter-nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }
-
-.column p{
-  margin-right: 5px;
+.chapter-link {
+  padding: 10px 20px;
+  margin: 5px 5px;
+  border: 2px solid #ccc;
+  background-color: #000000;
+  color: #ccc;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.chapter-link:hover {
+  background-color: #e0e0e0;
+  color:black;
 }
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
-@media screen and (min-width: 850px) {
-  .column {
-    float: left;
-    width: 50%;
-    height: 220px;
-  }
-} 
+.chapter-link.active {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #45a049;
+}
 
 
 /* PINK-BASED COLOUR-SWITCHING */
@@ -375,7 +450,7 @@ a.current{
 
 /* This is to make the things meet the bottom of the page, because margins in CSS are weird. */
 
-.content h1:first-of-type, .content h2:first-of-type, .content h3:first-of-type{
+.content h1:first-of-type, .content h2:first-of-type{
   padding-top:19px;
   padding-bottom: 15px;
   margin-top: 0px;
@@ -394,71 +469,75 @@ a.current{
   margin: 5px;
 }
 
-#page .Sam{
+.Sam{
   color: #006cff;
 }
 
-#page .Aidan{
+.Aidan{
   color: #00ff90;
 }
 
-#page .Daniel{
+.Daniel{
   color: #ff5400;
 }
 
-#page .Bonnie{
+.Bonnie{
   color: #ffd800;
 }
 
-#page .Jacqueline{
+.Jacqueline{
   color: #FF0000;
 }
 
-#page .Clara{
+.Clara{
   color: #88ff00;
 }
 
-#page .Leo{
+.Leo{
   color: #ffba00;
 }
 
-#page .Ghost{
+.Ghost{
   color: #b58400;
 }
 
-#page .Omar{
+.Omar{
   color: #593eff;
 }
 
-#page .David{
+.David{
   color: #ff9000;
 }
 
-#page .Dawn{
+.Dawn{
   color: #3041ff;
 }
 
-#page .Ash{
+.Ash{
   color: #00ff00;
 }
 
-#page .Anders{
+.Anders{
   color: #ff0096;
 }
 
-#page .green_mystery{
+.green_mystery{
   color: #00ff69;
 }
 
-#page .orange_mystery{
+.orange_mystery{
   color: #FF8B00;
 }
 
-#page .Robot{
+.purple_mystery{
+  color: #c800ff;
+}
+
+.Robot{
   font-family: 'Courier New', Courier, monospace;
 }
 
-#page .other_mystery{
+.other_mystery{
   text-align: right;
   font-family: 'Courier New', Courier, monospace;
 }

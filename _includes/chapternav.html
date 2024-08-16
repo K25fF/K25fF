@@ -1,0 +1,5 @@
+<div class="chapter-nav">
+    {%- for item in site.data.chaptnav -%}
+        <a href="{{ item.link }}" {% if page.url == item.link %}class="chapter-link active" {%- else -%} class="chapter-link" {% endif %}>{{ item.name }}</a>
+    {%- endfor -%}
+</div>
