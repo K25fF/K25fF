@@ -390,6 +390,14 @@ body.darker .content{
   background-color: #151515;
 }
 
+/* Flip turnways */
+
+.turnways {
+  transform:rotate(180deg);
+  -ms-transform:rotate(180deg);
+  -webkit-transform:rotate(180deg);
+  }
+
 /* Someone else is spooky */
 
 body.orange{
