@@ -456,6 +456,52 @@ a.current{
   position: relative;
 }
 
+#disclaimer {
+  z-index: 100;
+}
+
+.disclaimer-footer {
+  background-color: #000000;
+  border-top: 1px solid #333333;
+  padding: 5px 40px;
+  display: block;
+  margin: auto;
+  max-width: 920px;
+}
+
+.disclaimer-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: 100%;
+}
+
+.disclaimer-image {
+  height: 70px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.disclaimer-text {
+  font-family: "courier", "monospace";
+  font-size: 1em;
+  color: #ffffff;
+  flex-grow: 1;
+}
+
+/* Mobile adjustments */
+@media (orientation: portrait) and (max-width: 850px) {
+  .disclaimer-text {
+      font-size: 2em;
+  }
+  
+  .disclaimer-content {
+      padding: 0 20px;
+      gap: 10px;
+  }
+}
+
 /* This is to make the things meet the bottom of the page, because margins in CSS are weird. */
 
 .content h1:first-of-type, .content h2:first-of-type{
