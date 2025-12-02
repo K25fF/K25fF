@@ -523,6 +523,45 @@ a.current{
   margin: 5px;
 }
 
+// Chromatic aberration BEGIN
+
+.chromatic {
+  position: relative;
+  isolation: isolate;
+  
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: lighten;
+    z-index: -1; // Behind the base text
+    
+    // Force same wrapping behavior as parent
+    white-space: inherit;
+    word-break: inherit;
+    overflow-wrap: inherit;
+    hyphens: inherit;
+
+    opacity: 0.6;
+  }
+  
+  &::before {
+    color: #00ffff;
+    transform: translate(-1px, -1px);
+  }
+  
+  &::after {
+    color: #ff00ff;
+    transform: translate(1px, 1px);
+  }
+}
+
+// chromatic aberration end
+
 .Sam{
   color: #006cff;
 }
