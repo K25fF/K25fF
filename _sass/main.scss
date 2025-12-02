@@ -662,6 +662,14 @@ a.current{
   text-align: right;
 }
 
+/* Chromatic aberration */
+
+.split {
+  text-shadow:
+    -2px -2px 0 #ff00ff,
+    2px 2px 0 #00ffff;
+}
+
 /* Animation stuff? */
 /* Our mixin positions a copy of our text
 directly on our existing text, while
