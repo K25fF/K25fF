@@ -1,95 +1,95 @@
 <section id="navbar">
-    {% if page.previous_in_category != null %}
-        {% for post in site.categories['chiasmata'] %}
-            {% if forloop.last == true %}
+    {%- if page.previous_in_category != null -%}
+        {%- for post in site.categories['chiasmata'] -%}
+            {%- if forloop.last == true -%}
                 <a href="{{ post.url }}">
-                    {% if page.eye_type == "pink" %}
+                    {%- if page.eye_type == "pink" -%}
                         <img src="\assets\images\l_arrow_long_pink.png" title="first" alt="first">
-                    {% else %}
+                    {%- else -%}
                         <img src="\assets\images\l_arrow_long.png" title="first" alt="first">
-                    {% endif %}
+                    {%- endif -%}
                 </a>
-            {% endif %}
-        {% endfor %}
-    {% else %}
-        {% if page.eye_type == "pink" %}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- else -%}
+        {%- if page.eye_type == "pink" -%}
             <img src="\assets\images\l_arrow_long_pink_inactive.png" title="first" alt="you're at the beginning!">
-        {% else %}
+        {%- else -%}
             <img src="\assets\images\l_arrow_long_inactive.png" title="first" alt="you're at the beginning!">
-        {% endif %}
-    {% endif %}
-    {% if page.previous_in_category != null %}
+        {%- endif -%}
+    {%- endif -%}
+    {%- if page.previous_in_category != null -%}
         <a href="{{ page.previous_in_category.url }}">
-            {% if page.eye_type == "pink" %}
+            {%- if page.eye_type == "pink" -%}
                 <img src="\assets\images\l_arrow_short_pink.png" title="previous" alt="prev">
-            {% else %}
+            {%- else -%}
                 <img src="\assets\images\l_arrow_short.png" title="previous" alt="prev">
-            {% endif %}
+            {%- endif -%}
         </a>
-    {% else %}
-        {% if page.eye_type == "pink" %}
+    {%- else -%}
+        {%- if page.eye_type == "pink" -%}
             <img src="\assets\images\l_arrow_short_inactive_pink.png" title="you're at the beginning!" alt="prev">
-        {% else %}
+        {%- else -%}
             <img src="\assets\images\l_arrow_short_inactive.png" title="you're at the beginning!" alt="prev">
-        {% endif %}
-    {% endif %}
+        {%- endif -%}
+    {%- endif -%}
     <a href="/chiasmata/archive">
         <img src="
-        {% if page.eye_type == "pink" %}
+        {%- if page.eye_type == "pink" -%}
             \assets\images\eye_02.png
-        {% elsif page.eye_type == "spooky" %}
+        {%- elsif page.eye_type == "spooky" -%}
             \assets\images\eye_01.png
-        {% elsif page.eye_type == "glitchy" %}
+        {%- elsif page.eye_type == "glitchy" -%}
             \assets\images\Eye_glitch.gif
-        {% elsif page.eye_type == "ibby_eye" %}
+        {%- elsif page.eye_type == "ibby_eye" -%}
             \assets\images\Eye_ibby.png
-        {% elsif page.eye_type == "ibby_0" %}
+        {%- elsif page.eye_type == "ibby_0" -%}
             \assets\images\ibby_0.png
-        {% elsif page.eye_type == "ibby_1" and top == true %}
+        {%- elsif page.eye_type == "ibby_1" and top == true -%}
             \assets\images\ibby_1.png
-        {% elsif page.eye_type == "ibby_1" and top == false %}
+        {%- elsif page.eye_type == "ibby_1" and top == false -%}
             \assets\images\ibby_2.png
-        {% elsif page.eye_type == "syndicate" %}
+        {%- elsif page.eye_type == "syndicate" -%}
             \assets\images\eye_03.png
-        {% else %}
+        {%- else -%}
             \assets\images\eye_00.png
-        {% endif %}" 
-        {% if page.eye_title != null %}
+        {%- endif -%}" 
+        {%- if page.eye_title != null -%}
         title="{{ page.eye_title }}"
-        {% endif %}
+        {%- endif -%}
         alt="archive">
     </a>
-    {% if page.next_in_category != null %}
+    {%- if page.next_in_category != null -%}
         <a href="{{ page.next_in_category.url }}">
-            {% if page.eye_type == "pink" %}
+            {%- if page.eye_type == "pink" -%}
                 <img src="\assets\images\r_arrow_short_pink.png" title="next" alt="next">
-            {% else %}
+            {%- else -%}
                 <img src="\assets\images\r_arrow_short.png" title="next" alt="next">
-            {% endif %}
+            {%- endif -%}
         </a>
-    {% else %}
-        {% if page.eye_type == "pink" %}
+    {%- else -%}
+        {%- if page.eye_type == "pink" -%}
             <img src="\assets\images\r_arrow_short_pink_inactive.png" title="you're at the end!" alt="next">
-        {% else %}
+        {%- else -%}
             <img src="\assets\images\r_arrow_short_inactive.png" title="you're at the end!">
-        {% endif %}
-    {% endif %}
-    {% if page.next_in_category != null %}
-        {% for post in site.categories['chiasmata'] limit:1 %}
+        {%- endif -%}
+    {%- endif -%}
+    {%- if page.next_in_category != null -%}
+        {%- for post in site.categories['chiasmata'] limit:1 -%}
             <a href="{{ post.url }}">
-                {% if page.eye_type == "pink" %}
+                {%- if page.eye_type == "pink" -%}
                     <img src="\assets\images\r_arrow_long_pink.png" title="last" alt="last">
-                {% else %}
+                {%- else -%}
                     <img src="\assets\images\r_arrow_long.png" title="last" alt="last">
-                {% endif %}
+                {%- endif -%}
             </a>
-        {% endfor %}
-    {% else %}
-        {% if page.eye_type == "pink" %}
+        {%- endfor -%}
+    {%- else -%}
+        {%- if page.eye_type == "pink" -%}
             <img src="\assets\images\r_arrow_long_pink_inactive.png" title="you're at the end!" alt="last">
-        {% else %}
+        {%- else -%}
             <img src="\assets\images\r_arrow_long_inactive.png" title="you're at the end!" alt="last">
-        {% endif %}
-    {% endif %}
+        {%- endif -%}
+    {%- endif -%}
 </section>
-{% assign top = false %}
+{%- assign top = false -%}
