@@ -5,6 +5,8 @@
                 <a href="{{ post.url }}">
                     {%- if page.eye_type == "pink" -%}
                         <img src="\assets\images\l_arrow_long_pink.png" title="first" alt="first">
+                    {%- elsif page.eye_type == "red" -%}
+                        <img src="\assets\images\l_arrow_long_red.png" title="first" alt="first">
                     {%- else -%}
                         <img src="\assets\images\l_arrow_long.png" title="first" alt="first">
                     {%- endif -%}
@@ -14,6 +16,8 @@
     {%- else -%}
         {%- if page.eye_type == "pink" -%}
             <img src="\assets\images\l_arrow_long_pink_inactive.png" title="first" alt="you're at the beginning!">
+        {%- elsif page.eye_type == "red" -%}
+            <img src="\assets\images\l_arrow_long_red_inactive.png" title="first" alt="you're at the beginning!">
         {%- else -%}
             <img src="\assets\images\l_arrow_long_inactive.png" title="first" alt="you're at the beginning!">
         {%- endif -%}
@@ -22,6 +26,8 @@
         <a href="{{ page.previous_in_category.url }}">
             {%- if page.eye_type == "pink" -%}
                 <img src="\assets\images\l_arrow_short_pink.png" title="previous" alt="prev">
+            {%- elsif page.eye_type == "red" -%}
+                <img src="\assets\images\l_arrow_short_red.png" title="previous" alt="prev">
             {%- else -%}
                 <img src="\assets\images\l_arrow_short.png" title="previous" alt="prev">
             {%- endif -%}
@@ -29,6 +35,8 @@
     {%- else -%}
         {%- if page.eye_type == "pink" -%}
             <img src="\assets\images\l_arrow_short_inactive_pink.png" title="you're at the beginning!" alt="prev">
+        {%- elsif page.eye_type == "red" -%}
+            <img src="\assets\images\l_arrow_short_inactive_red.png" title="you're at the beginning!" alt="prev">
         {%- else -%}
             <img src="\assets\images\l_arrow_short_inactive.png" title="you're at the beginning!" alt="prev">
         {%- endif -%}
@@ -37,6 +45,8 @@
         <img src="
         {%- if page.eye_type == "pink" -%}
             \assets\images\eye_02.png
+        {%- elsif page.eye_type == "red" -%}
+            \assets\images\eye_04.png
         {%- elsif page.eye_type == "spooky" -%}
             \assets\images\eye_01.png
         {%- elsif page.eye_type == "glitchy" -%}
@@ -63,6 +73,8 @@
         <a href="{{ page.next_in_category.url }}">
             {%- if page.eye_type == "pink" -%}
                 <img src="\assets\images\r_arrow_short_pink.png" title="next" alt="next">
+            {%- elsif page.eye_type == "red" -%}
+                <img src="\assets\images\r_arrow_short_red.png" title="next" alt="next">
             {%- else -%}
                 <img src="\assets\images\r_arrow_short.png" title="next" alt="next">
             {%- endif -%}
@@ -70,6 +82,8 @@
     {%- else -%}
         {%- if page.eye_type == "pink" -%}
             <img src="\assets\images\r_arrow_short_pink_inactive.png" title="you're at the end!" alt="next">
+        {%- elsif page.eye_type == "red" -%}
+            <img src="\assets\images\r_arrow_short_red_inactive.png" title="you're at the end!" alt="next">
         {%- else -%}
             <img src="\assets\images\r_arrow_short_inactive.png" title="you're at the end!">
         {%- endif -%}
@@ -79,6 +93,8 @@
             <a href="{{ post.url }}">
                 {%- if page.eye_type == "pink" -%}
                     <img src="\assets\images\r_arrow_long_pink.png" title="last" alt="last">
+                {%- elsif page.eye_type == "red" -%}
+                    <img src="\assets\images\r_arrow_long_red.png" title="last" alt="last">
                 {%- else -%}
                     <img src="\assets\images\r_arrow_long.png" title="last" alt="last">
                 {%- endif -%}
@@ -87,6 +103,8 @@
     {%- else -%}
         {%- if page.eye_type == "pink" -%}
             <img src="\assets\images\r_arrow_long_pink_inactive.png" title="you're at the end!" alt="last">
+        {%- elsif page.eye_type == "red" -%}
+                <img src="\assets\images\r_arrow_long_red_inactive.png" title="you're at the end!" alt="last">
         {%- else -%}
             <img src="\assets\images\r_arrow_long_inactive.png" title="you're at the end!" alt="last">
         {%- endif -%}

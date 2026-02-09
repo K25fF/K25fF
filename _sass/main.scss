@@ -356,6 +356,29 @@ body.pink_1 #navbar{
 
 /* */
 
+/* Red colour switching */
+
+body.red{
+  background: #1c0a0a;
+}
+
+body.red .content{
+  background-color: #150b0b;
+}
+
+body.red #page{
+  background-color: #070000;
+  color: #fff8f8;
+}
+
+body.red nav{
+  background-color: #070000;
+}
+
+body.red #navbar{
+  background-color: #0c0707;
+}
+
 /* Spooky-style, dim and/or dark */
 
 body.dark{
@@ -488,6 +511,10 @@ a.current{
   font-size: 1em;
   color: #ffffff;
   flex-grow: 1;
+}
+
+.no-click {
+  pointer-events: none;
 }
 
 /* Mobile adjustments */
