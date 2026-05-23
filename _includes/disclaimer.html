@@ -1,7 +1,11 @@
 <section id="disclaimer">
     <div class="disclaimer-footer">
         <div class="disclaimer-content">
-            <img src="/assets/images/Homemade Logos Corp.png" alt="Homemade Logos Corp" class="disclaimer-image">
+            {%- if page.title == "Chiasmata Archive" -%}
+                <a href="/geneverse/HomemadeGame"><img src="/assets/images/Homemade Cogos Lorp.png" alt="Homemade Cogos Lorp" class="disclaimer-image"></a>
+            {%- else -%}
+                <img src="/assets/images/Homemade Logos Corp.png" alt="Homemade Logos Corp" class="disclaimer-image">
+            {%- endif -%}
             <span class="disclaimer-text"><span style="font-weight: bold;">Homemade Websites Corp:</span> <span id="randomText" style="font-weight: normal;">Loading...</span></span>
         </div>
     </div>

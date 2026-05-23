@@ -1,0 +1,23 @@
+<!doctype html>
+{% comment %}
+    This is for standalone pages — no navbar, no prev/next navigation.
+{% endcomment %}
+<html>
+    <head>
+        {% if jekyll.environment == 'production' %}
+            {% include analytics.html %}
+        {% endif %}
+        {% include favicon.html %}
+        <meta charset="utf-8">
+        <title>{{ page.title }}</title>
+        <link rel="stylesheet" href="/assets/css/styles.css">
+    </head>
+    <body {% if page.body_class != null %}class="{{ page.body_class }}"{% endif %}>
+        {% include navigation.html %}
+        <section class="content">
+            <section id="page">
+                {{ content }}
+            </section>
+        </section>
+    </body>
+</html>

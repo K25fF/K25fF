@@ -1,0 +1,133 @@
+// ── CRT Terminal skin ────────────────────────────────────────────────────────
+// Prevents the 8px default body margin from pushing height: 100vh over the fold.
+html, body { margin: 0; }
+
+$bezel-bg:          #1c1c1c;
+$bezel-radius:      18px;
+$screen-radius:     8px;
+$screen-default-bg: #000;
+$screen-default-fg: #fff;
+$vignette-stop:     60%;   // increase → smaller dark-corner zone
+$vignette-dark:     0.4;   // opacity of corner darkening
+$scanline-opacity:  0.2;
+$glow-radius:       6px;
+
+.crt-terminal {
+  box-sizing:      border-box;
+  font-family:     monospace;
+  font-size:       1rem;
+  height:          100vh;
+  background:      #000;
+  padding:         1.5rem 1rem;
+  display:         flex;
+  justify-content: center;
+
+  // ── Bezel ──────────────────────────────────────────────────────────────
+  .crt-bezel {
+    width:          66.67%;
+    background:     $bezel-bg;
+    border-radius:  $bezel-radius;
+    padding:        20px;
+    display:        flex;
+    flex-direction: column;
+    border:     1px solid #444;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  // ── Screen ─────────────────────────────────────────────────────────────
+  .crt-screen {
+    flex:             1;
+    min-height:       0;    // lets flex children shrink below content size
+    background-color: $screen-default-bg;
+    color:            $screen-default-fg;
+    border-radius:    $screen-radius;
+    overflow:         hidden;
+    position:         relative;
+    padding:          1.5rem;
+    display:          flex;
+    flex-direction:   column;
+    transition:       background-color 1.5s ease, color 1.5s ease;
+    box-shadow:       inset 0 0 60px rgba(0, 0, 0, 0.4);
+
+    // CRT curvature vignette
+    &::before {
+      content:        '';
+      position:       absolute;
+      inset:          0;
+      border-radius:  $screen-radius;
+      background:     radial-gradient(
+                        ellipse at center,
+                        transparent                    $vignette-stop,
+                        rgba(0, 0, 0, $vignette-dark)  100%
+                      );
+      pointer-events: none;
+      z-index:        10;
+    }
+
+    // scanlines
+    &::after {
+      content:        '';
+      position:       absolute;
+      inset:          0;
+      background:     repeating-linear-gradient(
+                        0deg,
+                        transparent,
+                        transparent                        3px,
+                        rgba(0, 0, 0, $scanline-opacity)   3px,
+                        rgba(0, 0, 0, $scanline-opacity)   4px
+                      );
+      pointer-events: none;
+      z-index:        11;
+    }
+  }
+
+  // ── Output ─────────────────────────────────────────────────────────────
+  #output {
+    flex:            1;
+    min-height:      0;
+    margin-bottom:   0.75rem;
+    overflow-y:      auto;
+    scrollbar-width: thin;
+    // --room-fg is set via JS on handleEnterRoom so the scrollbar tracks the room colour
+    scrollbar-color: var(--room-fg, #{$screen-default-fg}) transparent;
+
+    &::-webkit-scrollbar       { width: 6px; }
+    &::-webkit-scrollbar-track { background: transparent; }
+    &::-webkit-scrollbar-thumb { background-color: var(--room-fg, #{$screen-default-fg}); }
+
+    p, p span, p a {
+      margin:      0;
+      line-height: 1.5;
+      text-shadow: 0 0 $glow-radius currentColor;
+    }
+
+    p a:link    { color: #a8d0ff; text-decoration: underline; }
+    p a:visited { color: #c8a8ee; text-decoration: underline; }
+  }
+
+  // ── Utilities ──────────────────────────────────────────────────────────
+  .centered p { text-align: center; }
+
+  // ── Input row ──────────────────────────────────────────────────────────
+  #input-row {
+    display:     flex;
+    gap:         0.4em;
+    text-shadow: 0 0 $glow-radius currentColor;
+  }
+
+  #cmd {
+    background:  transparent;
+    border:      none;
+    color:       inherit;
+    caret-color: currentColor;
+    font-family: monospace;
+    font-size:   1rem;
+    flex:        1;
+    outline:     none;
+    text-shadow: 0 0 $glow-radius currentColor;
+  }
+}

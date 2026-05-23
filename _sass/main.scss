@@ -546,6 +546,10 @@ a.current{
   margin-top: 0px;
 }
 
+#page > p:first-child {
+    margin-top: 0;
+  }
+
 .content p:last-of-type, .content h2:last-of-type, .content ol:last-of-type{
   padding-bottom: 15px;
   margin-bottom: 0px;
