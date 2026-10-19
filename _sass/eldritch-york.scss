@@ -1,0 +1,134 @@
+// ── Eldritch York transcripts ───────────────────────────────────────────────
+// Speaker labels are the bold text at the start of each paragraph; headings
+
+$paper:          #f1ead8;
+$ink:            #2a2622;
+$pencil:         #7a7268;   // stage directions / transcriber's notes
+$rule:           #aa9f91;
+$link-ink:       #8a2b1d;
+$typewriter:     'Courier Prime', 'Courier New', Courier, monospace;
+$label-width:    10ch;      // might need to be wider in future
+
+// `.content` prefixes are there to outrank the `.content p:last-of-type`
+// and `.content h2:first-of-type` padding rules in main.scss.
+
+.content .transcript {
+  // 1. Monospace, but only inside the log
+  font-family:  $typewriter;
+  font-size:    1rem;
+  line-height:  1.5;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: none;
+
+  // 2. Paper
+  background-color:   $paper;
+  background-size:    100% 1.5rem;
+  background-image: linear-gradient(transparent 0px, transparent calc(1.5rem - 1px), $rule calc(1.5rem - 1px), $rule 1.5rem);
+  color:        $ink;
+  margin:       2em 0;
+  padding:      1.5em 2em;
+  box-shadow:   0 2px 10px rgba(0, 0, 0, 0.6);
+  
+  sup{
+    line-height: 0;
+  }
+
+  p {
+    // 3. Hanging speaker column: labels sit in the gutter, speech wraps under itself
+    position:       relative;
+    padding-left:   $label-width;
+    padding-bottom: 0;
+    margin:         0 0 1.5em;
+
+    > strong:first-child {
+      position:    absolute;
+      left:        0;
+      width:       $label-width;
+      font-weight: 700;
+    }
+  }
+
+  // 4. Stage directions in pencil
+  em {
+    color: $pencil;
+  }
+
+  // Tape markers: ## [BEGIN LOG] / ## [END LOG]
+  h2 {
+    font-family:    inherit;
+    font-size:      0.9em;
+    line-height:    1.5rem;
+    font-weight:    700;
+    text-align:     center;
+    letter-spacing: 0.3em;
+    padding:        0;
+    margin:         0 0 1.5rem;
+  }
+
+  h2:last-child {
+    margin: 1.5rem 0 0;
+  }
+
+  a {
+    color: $link-ink;
+  }
+}
+
+.eldritch-york .subtitle {
+  background: #262626;
+  color:       #cfcfcf;
+  padding:     0.75em 1em;
+  margin:      0 0 1.5em;
+  border-left: 3px solid #555;
+}
+
+.footnote-popup{
+  position:     absolute;
+  background: #262626;
+  color:      #cfcfcf;
+  max-width:    min(25em, calc(100vw - 16px));
+  padding:      0.25em 1em;
+}
+
+.eldritch-york .logbook {
+  background: $paper;
+  font-family: $typewriter;
+  color: $ink;
+  padding: 0.5em 1.5em;
+
+  table {
+    border-collapse: collapse;
+    margin-left: 0.5em;
+  }
+
+  th, td {
+    border: 1px solid $rule;
+    padding: 0.25em 0.75em;
+  }
+
+  th {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    border-bottom: double;
+    background: darken($paper, 5%);
+    text-align: left;
+  }
+
+  .log-remark {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8em;
+    color: $pencil;
+  }
+
+  .log-remark em {
+    color: $ink;
+    font-family: 'Homemade Apple';
+    font-size: 1.2em;
+    text-transform: none;
+    rotate: -1deg;
+    display: inline-block;
+  }
+}
