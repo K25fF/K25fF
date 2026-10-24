@@ -1,0 +1,13 @@
+{%- for item in site.data.powers -%}
+    {%- assign stamp_true = false -%}
+    {%- if include.power == item.slug -%}
+        {%- assign stamp_true = true -%}
+    {%- elsif include.power == nil and page.powers contains item.slug -%}
+        {%- assign stamp_true = true -%}
+    {%- endif -%}
+    {%- if stamp_true -%}
+        {%- capture stamp_raw -%}{%- include stamps/stamp-{{ item.slug }}.svg -%}{%- endcapture -%}
+        <div class="stamp stamp-{{ item.slug }}" role="img" aria-label="{{ item.name }}">{{ stamp_raw | strip_newlines }}</div>
+    {%- endif -%}
+{%- endfor -%}
+

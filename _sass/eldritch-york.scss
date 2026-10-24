@@ -17,6 +17,10 @@ $label-width:    10ch;      // might need to be wider in future
   font-family:  $typewriter;
   font-size:    1rem;
   line-height:  1.5;
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: none;
@@ -130,5 +134,19 @@ $label-width:    10ch;      // might need to be wider in future
     text-transform: none;
     rotate: -1deg;
     display: inline-block;
+  }
+}
+
+.eldritch-york .stamp{
+  display: inline-block;
+  opacity: 0.9;
+  position: absolute;
+  mix-blend-mode: multiply;
+  z-index: -1;
+  &.stamp-the-labyrinth{
+    color: #d493a0;
+  }
+  &.stamp-the-wakingwood{
+    color: #7bce6e;
   }
 }

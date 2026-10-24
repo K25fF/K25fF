@@ -1,0 +1,19 @@
+<filter id="stamp-{{ include.seed | default: "0" }}">
+    <feTurbulence baseFrequency="0.7" numOctaves="2" result="noise" seed="{{ include.seed | default: 0 }}"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" result="rough"></feDisplacementMap>
+    <feTurbulence type="fractalNoise" baseFrequency="0.1" seed="{{ include.seed | default: 0 | plus: 12}}" result="patches"></feTurbulence>
+    <feComponentTransfer in="patches" result="gaps">
+        <feFuncA type="discrete" tableValues="0 0 1 1 1 1"></feFuncA>
+    </feComponentTransfer>
+    <feTurbulence type="fractalNoise" baseFrequency="1" seed="{{ include.seed | default: 0 | plus: 7}}" result="grain"></feTurbulence>
+    <feComponentTransfer in="grain" result="texture">
+        <feFuncA type="discrete" tableValues="0 0 0.1 0.8 1 1 1 1"></feFuncA>
+    </feComponentTransfer>
+    <feComposite in="texture" in2="gaps" operator="in" result="fullTexture"></feComposite>
+    <feComposite in="rough" in2="fullTexture" operator="in" result="stamped"></feComposite>
+    <feGaussianBlur in="stamped" stdDeviation="1" result="bleed"></feGaussianBlur>
+    <feMerge>
+        <feMergeNode in="bleed"></feMergeNode>
+        <feMergeNode in="stamped"></feMergeNode>
+    </feMerge>
+</filter>

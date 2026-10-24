@@ -2,7 +2,7 @@
 layout: eldritch_york
 title: "Chicoutimi Nightfall"
 category: eldritch_york
-powers: "The Labyrinth"
+powers: [the-labyrinth]
 location: "Chicoutimi, Québec"
 date: 19-10-2026
 ---
@@ -192,6 +192,8 @@ Transcribed 1966, from the station's logger tape. Translated from the French; th
 >
 > **03:25:** \[*crackle, as the record begins*]
 >
+> {% include power-stamps.html %}{: style="right: 2em; margin-top: -150px; rotate: -3deg; filter: url(#stamp-0);"}
+> 
 > ## \[END LOG]
 {: .transcript}
 

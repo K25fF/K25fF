@@ -1,0 +1,11 @@
+{%- comment -%}Style a filter onto a SVG with filter: url(#stamp-#num) in the styles - the default one is "stamp-0" {%- endcomment -%}
+<svg width="0" height="0" style="position: absolute" aria-hidden="true"><defs>
+    {%- include filters/stamp.svg -%}
+    {%- assign segments = content | split: "url(#stamp-" -%}
+    {%- for seg in segments offset: 1 -%}
+        {%- assign num = seg | split: ")" | first -%}
+        {%- if num != "0" -%}
+            {%- include filters/stamp.svg seed=num -%}
+        {%- endif -%}
+    {%- endfor -%}
+</defs></svg>
