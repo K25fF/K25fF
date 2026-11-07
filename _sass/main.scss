@@ -70,6 +70,36 @@ nav span{
   padding-top: 5px;
 }
 
+#rightlinks svg {
+  height: 30px;
+}
+
+#rightlinks a {
+  color: white;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+#rightlinks a + a {
+  margin-left: 3px;
+}
+
+#rightlinks a[aria-label="Bluesky"]:is(:hover, :focus-visible) {
+  color: #1185FE;
+}
+
+#rightlinks a[aria-label="DeviantArt"]:is(:hover, :focus-visible) {
+  color: #05CC46;
+}
+
+#rightlinks a[aria-label="Tumblr"]:is(:hover, :focus-visible) {
+  color: #496180;
+}
+
+#rightlinks a[aria-label="Twitter"]:is(:hover, :focus-visible) {
+  color: #1DA1F2;
+}
+
 @media (orientation:portrait) and (max-width: 850px) {
   #rightlinks {
     clear: both;
